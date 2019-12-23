@@ -1,0 +1,22 @@
+dir     /usr/                                     0755 0 0
+dir     /usr/bin                                  0755 0 0
+dir     /usr/sbin                                 0755 0 0
+dir     /sbin/                                    0755 0 0
+dir     /proc                                     0555 0 0
+dir     /sys                                      0755 0 0
+dir     /dev                                      755 0 0
+nod     /dev/zero                                 0666 0 0 c 1 5
+dir     /bin                                      0755 0 0
+slink   /bin/sh         busybox                   0755 0 0
+file    /bin/busybox    image/bin/busybox         0755 0 0
+file    /init           image/init.sh             0755 0 0
+dir     /lib/                                     0555 0 0
+dir     /lib64/                                     0555 0 0
+dir     /lib/x86_64-linux-gnu                     0555 0 0
+file    /lib/x86_64-linux-gnu/libc-2.27.so /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0
+slink   /lib/x86_64-linux-gnu/libc.so.6   /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0 
+file    /lib/x86_64-linux-gnu/ld-2.27.so /lib/x86_64-linux-gnu/ld-2.27.so  0755 0 0
+slink  /lib64/ld-linux-x86-64.so.2 /lib/x86_64-linux-gnu/ld-2.27.so   0755 0 0
+file   /bin/xtable-multis initramfs/xtables-multi 0755 0 0
+
+
