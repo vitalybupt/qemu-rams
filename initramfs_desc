@@ -16,7 +16,8 @@ dir     /lib/x86_64-linux-gnu                     0555 0 0
 file    /lib/x86_64-linux-gnu/libc-2.27.so /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0
 slink   /lib/x86_64-linux-gnu/libc.so.6   /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0 
 file    /lib/x86_64-linux-gnu/ld-2.27.so /lib/x86_64-linux-gnu/ld-2.27.so  0755 0 0
-slink  /lib64/ld-linux-x86-64.so.2 /lib/x86_64-linux-gnu/ld-2.27.so   0755 0 0
-file   /bin/xtable-multis initramfs/xtables-multi 0755 0 0
+slink   /lib64/ld-linux-x86-64.so.2 /lib/x86_64-linux-gnu/ld-2.27.so   0755 0 0
+file    /bin/xtable-multis image/bin/xtables-multi 0755 0 0
+file    /bin/iperf image/bin/iperf 0755 0 0
 
 
