@@ -1,3 +1,4 @@
+dir     /tmp/                                     0755 0 0
 dir     /usr/                                     0755 0 0
 dir     /usr/bin                                  0755 0 0
 dir     /usr/sbin                                 0755 0 0
@@ -10,14 +11,14 @@ dir     /bin                                      0755 0 0
 slink   /bin/sh         busybox                   0755 0 0
 file    /bin/busybox    image/bin/busybox         0755 0 0
 file    /init           image/init.sh             0755 0 0
-dir     /lib/                                     0555 0 0
-dir     /lib64/                                     0555 0 0
-dir     /lib/x86_64-linux-gnu                     0555 0 0
-file    /lib/x86_64-linux-gnu/libc-2.27.so /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0
-slink   /lib/x86_64-linux-gnu/libc.so.6   /lib/x86_64-linux-gnu/libc-2.27.so 0755 0 0 
-file    /lib/x86_64-linux-gnu/ld-2.27.so /lib/x86_64-linux-gnu/ld-2.27.so  0755 0 0
-slink   /lib64/ld-linux-x86-64.so.2 /lib/x86_64-linux-gnu/ld-2.27.so   0755 0 0
-file    /bin/xtable-multis image/bin/xtables-multi 0755 0 0
-file    /bin/iperf image/bin/iperf 0755 0 0
+dir     /usr/lib/                                     0555 0 0
+dir     /usr/lib64/                                     0555 0 0
+file    /usr/lib/libc-2.30.so /usr/lib/libc-2.30.so 0755 0 0
+slink   /usr/lib/libc.so.6   /usr/lib/libc-2.30.so 0755 0 0 
+file    /usr/lib/ld-2.30.so /usr/lib/ld-2.30.so  0755 0 0
+slink   /usr/lib64/ld-linux-x86-64.so.2 /usr/lib/ld-2.30.so   0755 0 0
+file   /bin/xtable-multis image/bin/xtables-multi 0755 0 0
+file   /bin/tcp_server image/bin/tcp_server 0755 0 0
+file   /bin/iperf      image/bin/iperf 0755 0 0
 
 
