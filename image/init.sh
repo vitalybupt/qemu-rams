@@ -5,18 +5,14 @@
 #Mount things needed by this script
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
+mount -n -t tmpfs none /dev
+mount -n -t tmpfs none /tmp
 
 #Disable kernel messages from popping onto the screen
 echo 0 > /proc/sys/kernel/printk
 
 #Clear the screen
 clear
-
-
-#Create device nodes
-mknod /dev/null c 1 3
-mknod /dev/tty c 5 0
-mdev -s
 
 #Function for parsing command line options with "=" in them
 # get_opt("init=/sbin/init") will return "/sbin/init"
@@ -68,6 +64,12 @@ done
 #Mount the root device
 #mount "${root}" /newroot
 
+#Create device nodes
+mknod /dev/null c 1 3
+mknod /dev/tty c 5 0
+mknod -m 666 /dev/ttyS0 c 4 64
+mdev -s
+
 #Check if $init exists and is executable
 #if [[ -x "/newroot/${init}" ]] ; then
 	#Unmount all other mounts so that the ram used by
@@ -79,5 +81,7 @@ done
 #fi
 
 #This will only be run if the exec above failed
-echo "Failed to switch_root, dropping to a shell"
+echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
+
+setsid  cttyhack sh
 exec sh
